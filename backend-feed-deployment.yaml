@@ -5,7 +5,7 @@ metadata:
   labels:
     app: backend-feed
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: backend-feed
@@ -17,6 +17,11 @@ spec:
       containers:
       - name: backend-feed
         image: daitv3/udagram-api-feed:v1
+        resources:
+          limits:
+            cpu: "200m"
+          requests:
+            cpu: "100m"
         ports:
         - containerPort: 8080
         env:

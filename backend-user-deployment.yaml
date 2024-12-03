@@ -17,6 +17,11 @@ spec:
       containers:
       - name: backend-user
         image: daitv3/udagram-api-user:v1
+        resources:
+          limits:
+            cpu: "200m"
+          requests:
+            cpu: "100m"
         ports:
         - containerPort: 8080
         env:
